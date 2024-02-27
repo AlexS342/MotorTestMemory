@@ -1,0 +1,150 @@
+<template>
+    <div class="startPlay">
+        <div class="startPlay__logo">
+            <img class="startPlay__logoImg" src="@/assets/img/cards/joker.jpg" alt="joker"/>
+        </div>
+        <h1 class="startPlay__header">
+            Игра "Memory"
+        </h1>
+        <button class="startPlay__button" @click="goPlay">Начать игру!</button>
+    </div>
+</template>
+
+<script>
+import {defineComponent} from "vue";
+
+export default defineComponent({
+    methods: {
+        goPlay: function () {
+            this.$router.push({path: '/play'})
+        }
+    }
+})
+</script>
+
+<style scoped>
+
+/*Start.html*/
+
+.startPlay {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.startPlay__logo {
+    width: 100px;
+    height: 144px;
+    box-sizing: border-box;
+    margin-bottom: 30px;
+}
+
+.startPlay__logoImg {
+    width: 100px;
+    height: 144px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.startPlay__header {
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 4em;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.startPlay__button {
+    height: 30px;
+    padding: 0 36px;
+    border-radius: 15px;
+    border: none;
+    box-sizing: border-box;
+    background-color: rgb(122 170 255);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+
+.startPlay__button:hover {
+    background-color: rgb(93, 153, 255);
+    color: rgb(153, 255, 153);
+}
+
+.startPlay__button:active {
+    background-color: rgb(255, 60, 0);
+    color: rgb(0, 47, 255);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .startPlay__logo {
+        width: 80px;
+        height: 115px;
+    }
+
+    .startPlay__logoImg {
+        width: 80px;
+        height: 115px;
+        border-radius: 7px;
+    }
+
+    .startPlay__header {
+        font-size: 3em;
+        margin-bottom: 45px;
+    }
+
+    .startPlay__button {
+        padding: 0 24px;
+    }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
+    .startPlay__logo {
+        width: 60px;
+        height: 86px;
+        margin-bottom: 20px;
+    }
+
+    .startPlay__logoImg {
+        width: 60px;
+        height: 86px;
+        border-radius: 5px;
+    }
+
+    .startPlay__header {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .startPlay__button {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .startPlay__logo {
+        width: 45px;
+        height: 65px;
+        margin-bottom: 16px;
+    }
+
+    .startPlay__logoImg {
+        width: 45px;
+        height: 65px;
+        border-radius: 5px;
+    }
+
+    .startPlay__header {
+        font-size: 1.5em;
+        margin-bottom: 24px;
+    }
+
+    .startPlay__button {
+        padding: 0 16px;
+    }
+}
+</style>
